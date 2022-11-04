@@ -17,4 +17,7 @@ export class NavegationComponent implements OnInit {
     console.log(this.Buscador);
     this.router.navigate(['']);
   }
+  CerrarSesion(){
+    this.router.navigate([''])
+  }
 }

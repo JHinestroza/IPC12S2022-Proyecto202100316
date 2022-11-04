@@ -17,6 +17,8 @@ export class JugadoresService {
     CargarDatos(): any{
       return this.http.get(`${this.API_URI}/todos`);
     }
-    
+    ObtenerJugadorNombre(nombreJugador: string) : any {
+      return this.http.get(`${this.API_URI}/Nombre/${nombreJugador}`);
+    }
 
 }
