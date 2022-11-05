@@ -20,5 +20,11 @@ export class JugadoresService {
     ObtenerJugadorNombre(nombreJugador: string) : any {
       return this.http.get(`${this.API_URI}/Nombre/${nombreJugador}`);
     }
+    ObtenerJugadoreleccion(SeleccionJugadores: string) : any {
+      return this.http.get(`${this.API_URI}/Seleccion/${SeleccionJugadores}`);
+    }
+    ObtenerJugadoresRegion(RegionJugadores: string) : any {
+      return this.http.get(`${this.API_URI}/Region/${RegionJugadores}`);
+    }
 
 }

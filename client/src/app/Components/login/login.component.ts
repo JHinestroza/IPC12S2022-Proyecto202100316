@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { UsuariosService } from 'src/app/Services/login.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -49,9 +48,9 @@ export class LoginComponent implements OnInit {
     } else {
       window.alert("Campos vacio, Ingrese informacion")
     }
+    //si el usuario es incorrecto
     if (this.bandera != 1) {
       if (this.nombreUsuario != "" && this.passwordUsuario != "") {
-
         for (const usuario of this.datosUsuarios) {
           if (usuario.Usuario != this.nombreUsuario || usuario.Password != this.passwordUsuario) {
             window.alert("Usuario o Contraseña Incorrecta");
@@ -60,8 +59,5 @@ export class LoginComponent implements OnInit {
         }
       }
     }
-  }
-  Comprobador() {
-
   }
 }

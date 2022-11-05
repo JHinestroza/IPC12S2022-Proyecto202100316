@@ -7,14 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
-<body>
+
+<body background="https://img.freepik.com/vector-gratis/minimo-fondo-blanco-gris-lineas-onduladas_1017-25099.jpg?w=2000">
     <app-navegation></app-navegation>
 
-    <h1>Bienvenido<span class="badge bg-primary"> {{usuario.Usuario}}</span></h1>
+    <h1 align="center" >Bienvenido<span class="badge bg-primary"> {{usuario.Usuario}}</span></h1>
+    <div class=" mb-3 col-sm-4" >
+        <select class="form-select" size="1" aria-label=".form-select-sm example" [(ngModel)]="Opcion" col-sm-2 >
+            <option value="0" selected>Todos </option>
+            <option value="1">Seleccion </option>
+            <option value="2">Nombre</option>
+            <option value="3">Region</option>
+        </select>
+    </div>
+    
 
-    <div class="container" >
+    <div class="input-group mb-3" align="center">
+
+            <span class="input-group-text controls" id="inputGroup-sizing-default">Texto a buscar</span>
+            <input class="controls" type="text" [(ngModel)]="Texto" value="" placeholder="Contraseña"
+                style="color:rgb(6, 14, 21)">
+            <button class="btn btn-primary" type="submit" (click)="Jugadores()">Buscar</button>
+
+    </div>
+
+
+
+
+    <div class="container">
         <div class="row">
-            <div class="mt-5 col-sm-4" *ngFor="let dato of datosJugadores" >
+            
+            <div class="mt-5 col-sm-4" *ngFor="let dato of datosJugadores">
                 <app-tarjetas [DatoJugadorEspecifico]="dato"></app-tarjetas>
             </div>
         </div>
